@@ -21,6 +21,7 @@
       <div class="main">
          <div class="col-md-6 col-sm-12">
             <div class="login-form">
+              
                <form action="<?php
                  $phpSelf = filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_URL);
                echo $phpSelf; ?>" method="post">
@@ -29,21 +30,25 @@
                      <input type="text" class="form-control" name="name" placeholder="User Name" class="form-control form-control-lg <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
                      <span class="invalid-feedback"><?php echo $name_err; ?></span>
                   </div>
+                 
                   <div class="form-group">
                      <label>Email</label>
                      <input type="email" class="form-control" name="password" placeholder="Email" class="form-control form-control-lg <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
                      <span class="invalid-feedback"><?php echo $email_err; ?></span>
                   </div>
+                 
                   <div class="form-group">
                      <label>Password</label>
                      <input type="password" class="form-control" name="password" placeholder="Password" class="form-control form-control-lg <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
                      <span class="invalid-feedback"><?php echo $password_err; ?></span>
                   </div>
+                 
                   <div class="form-group">
                      <label>Repeat password</label>
                      <input type="password" class="form-control" name="confirm-password" placeholder="Repeat password" class="form-control form-control-lg <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
                      <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
                   </div>
+                 
                   <button type="submit" class="btn btn-black">Register</button> <br>
                   <a href="login.php">Already registered? Go to login</a>
                </form>
