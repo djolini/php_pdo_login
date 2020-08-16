@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<div class="sidenav">
+         <div class="login-main-text">
+            <h2>Application<br> Login Page</h2>
+            <p>Login or register from here to access.</p>
+            <button type="button" name="button" class="glow-on-hover"  onclick="window.location.href='#'">Find out more</button>
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               <form action="<?php
+                 $phpSelf = filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_URL);
+               echo $phpSelf; ?>" method="post">
+                  <div class="form-group">
+                     <label>User Name</label>
+                     <input type="text" class="form-control" name="name" placeholder="User Name" class="form-control form-control-lg <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
+                     <span class="invalid-feedback"><?php echo $name_err; ?></span>
+                  </div>
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input type="email" class="form-control" name="password" placeholder="Email" class="form-control form-control-lg <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                     <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" name="password" placeholder="Password" class="form-control form-control-lg <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                  </div>
+                  <div class="form-group">
+                     <label>Repeat password</label>
+                     <input type="password" class="form-control" name="confirm-password" placeholder="Repeat password" class="form-control form-control-lg <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                     <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                  </div>
+                  <button type="submit" class="btn btn-black">Register</button> <br>
+                  <a href="login.php">Already registered? Go to login</a>
+               </form>
+            </div>
+         </div>
+      </div>
+  </body>
+</html>
